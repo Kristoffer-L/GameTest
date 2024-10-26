@@ -1,0 +1,13 @@
+*, *::before, *::after {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+.section-headline_area {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+.btn-1, .btn-2, .btn-3 {
+    font-size: 3rem;
+}
