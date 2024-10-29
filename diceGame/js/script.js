@@ -3,6 +3,8 @@ let P1Turn = true;
 let result = 0;
 let p1result;
 let p2result;
+const headlinePlay = document.querySelector(".article-headline-play");
+const headlineSave = document.querySelector(".article-headline-save");
 const winScreen = document.querySelector(".winScreen");
 const p1Headline = document.querySelector(".player1-headline");
 const p2Headline = document.querySelector(".player2-headline");
@@ -96,12 +98,8 @@ function newGameFunction() {
   p1TotalNumber.innerHTML = 0;
   p2TotalNumber.innerHTML = 0;
   winScreen.classList.add("display-none");
-  document
-    .querySelector(".article-headline-play")
-    .classList.remove("display-none");
-  document
-    .querySelector(".article-headline-save")
-    .classList.remove("display-none");
+  hclassList.remove("display-none");
+  headlineSave.classList.remove("display-none");
   p1Number.innerHTML = "0";
   p2Number.innerHTML = "0";
   p1Headline.classList.add("headline-border");
@@ -120,23 +118,15 @@ function saveFunction() {
     result = 0;
     resultRound = [];
     P1Turn = false;
-    document
-      .querySelector(".player1-headline")
-      .classList.remove("headline-border");
-    document
-      .querySelector(".player2-headline")
-      .classList.add("headline-border");
+    p1Headline.classList.remove("headline-border");
+    p2Headline.classList.add("headline-border");
   } else {
     p2TotalNumber.innerHTML = result;
     result = 0;
     resultRound = [];
     P1Turn = true;
-    document
-      .querySelector(".player1-headline")
-      .classList.add("headline-border");
-    document
-      .querySelector(".player2-headline")
-      .classList.remove("headline-border");
+    p1Headline.classList.add("headline-border");
+    p2Headline.classList.remove("headline-border");
     p1result = Number(p1TotalNumber.innerHTML);
     p2result = Number(p2TotalNumber.innerHTML);
     console.log("p1result", p1result);
@@ -151,12 +141,8 @@ function saveFunction() {
       winScreen.classList.remove("display-none");
       winScreen.innerHTML = "draw";
     }
-    document
-      .querySelector(".article-headline-play")
-      .classList.add("display-none");
-    document
-      .querySelector(".article-headline-save")
-      .classList.add("display-none");
+    hclassList.add("display-none");
+    headlineSave.classList.add("display-none");
   }
 }
 function playFunction() {
@@ -246,36 +232,22 @@ function playFunction() {
                       resultRound = [];
                       result = 0;
                       p2Number.innerHTML = 0;
-                      document
-                        .querySelector(".winScreen")
-                        .classList.remove("display-none");
+                      document.querySelector(".winScreen").classList.remove("display-none");
                       winScreen.innerHTML = 0;
-                      p1result = Number(
-                        document.querySelector(".player1-total-number")
-                          .innerHTML
-                      );
-                      p2result = Number(
-                        document.querySelector(".player2-total-number")
-                          .innerHTML
-                      );
+                      p1result = Number(p1TotalNumber.innerHTML);
+                      p2result = Number(p2TotalNumber.innerHTML);
                       if (p1result > p2result) {
                         winScreen.classList.remove("display-none");
-                        winScreen.innerHTML =
-                          "vinnare: Player1 med " + p1result + " Poäng";
+                        winScreen.innerHTML = "vinnare: Player1 med " + p1result + " Poäng";
                       } else if (p1result < p2result) {
                         winScreen.classList.remove("display-none");
-                        winScreen.innerHTML =
-                          "vinnare: Player2 med " + p2result + " Poäng";
+                        winScreen.innerHTML = "vinnare: Player2 med " + p2result + " Poäng";
                       } else {
                         winScreen.classList.remove("display-none");
                         winScreen.innerHTML = "draw";
                       }
-                      document
-                        .querySelector(".article-headline-play")
-                        .classList.add("display-none");
-                      document
-                        .querySelector(".article-headline-save")
-                        .classList.add("display-none");
+                      headlinePlay.classList.add("display-none");
+                      headlineSave.classList.add("display-none");
                     }
                   }
                 }, 500);
