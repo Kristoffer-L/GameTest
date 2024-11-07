@@ -102,10 +102,8 @@ function newGameFunction() {
   p1Headline.classList.add("headline-border");
   p2Headline.classList.remove("headline-border");
   winScreen.classList.add("display-none");
-  hclassList.remove("display-none");
   headlineSave.classList.remove("display-none");
-  p1Number.innerHTML = "0";
-  p2Number.innerHTML = "0";
+  headlinePlay.classList.remove("display-none");
   p1Headline.classList.add("headline-border");
   p2Headline.classList.remove("headline-border");
   clearDice(diceArr1);
@@ -145,7 +143,7 @@ function saveFunction() {
       winScreen.classList.remove("display-none");
       winScreen.innerHTML = "draw";
     }
-    hclassList.add("display-none");
+    headlinePlay.classList.add("display-none");
     headlineSave.classList.add("display-none");
   }
 }
