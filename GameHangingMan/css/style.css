@@ -2,14 +2,19 @@
 *::before,
 *::after {
   margin: 0;
-  padding: 1rem;
+  padding: 0;
   box-sizing: border-box;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 div {
-  background-color: red;
+  display: flex;
+  justify-content: center;
+  /* background-color: red; */
 }
 p {
-  border-radius: 1rem;
-  background-color: white;
+  font-size: 5rem;
+  /* background-color: white; */
+  border-bottom: 0.2rem solid black;
+  padding: 0.5rem 2rem;
+  margin: 1rem;
 }

@@ -97,6 +97,10 @@ function newGameFunction() {
   P1Turn = true;
   p1TotalNumber.innerHTML = 0;
   p2TotalNumber.innerHTML = 0;
+  p1Number.innerHTML = 0;
+  p2Number.innerHTML = 0;
+  p1Headline.classList.add("headline-border");
+  p2Headline.classList.remove("headline-border");
   winScreen.classList.add("display-none");
   hclassList.remove("display-none");
   headlineSave.classList.remove("display-none");

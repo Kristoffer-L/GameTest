@@ -9,10 +9,19 @@ function wordChoice() {
   showWord();
 }
 function showWord() {
+
   const divs = document.createElement("div");
   document.body.appendChild(divs);
-  const para = document.createElement("p");
-  para.innerText = word;
-  document.querySelector("div").appendChild(para);
+  wordArray.map((item) => {
+    let index = wordArray.indexOf(item);
+    console.log(index)
+    const para = document.createElement("p");
+    para.innerText = item;
+    document.querySelector("div").appendChild(para);
+  });
+  const sections = document.createElement("section");
+  document.body.appendChild(sections);
+  const input = document.createElement("input");
+  document.querySelector("section").appendChild(input);
   console.log(wordArray);
 }
