@@ -110,12 +110,9 @@ function newGameFunction() {
   clearDice(diceArr2);
   div1_4.classList.remove("display-none");
   div2_4.classList.remove("display-none");
-
-  console.log("works");
 }
 function saveFunction() {
   if (P1Turn === true) {
-    console.log(resultRound);
     p1TotalNumber.innerHTML = result;
     result = 0;
     resultRound = [];
@@ -131,8 +128,6 @@ function saveFunction() {
     p2Headline.classList.remove("headline-border");
     p1result = Number(p1TotalNumber.innerHTML);
     p2result = Number(p2TotalNumber.innerHTML);
-    console.log("p1result", p1result);
-    console.log("p2result", p2result);
     if (p1result > p2result) {
       winScreen.classList.remove("display-none");
       winScreen.innerHTML = "Vinnare: Player1 med " + p1result + " Poäng";
@@ -149,7 +144,6 @@ function saveFunction() {
 }
 function playFunction() {
   result = 0;
-  console.log("works");
   diceNum1(diceArr1);
   diceNum1(diceArr2);
   setTimeout(() => {
@@ -203,16 +197,11 @@ function playFunction() {
                   } else {
                     diceNum6(diceArr2);
                   }
-                  console.log("diceResult1", diceResult1);
-                  console.log("diceResult2", diceResult2);
                   let hitresult = diceResult1 + diceResult2;
-                  console.log("hitresult", hitresult);
                   resultRound.push(hitresult);
                   let result2 = 0;
                   resultRound.forEach((num1) => {
                     result += num1;
-                    console.log("result", result);
-                    console.log("p1result", p1result);
                   });
                   if (P1Turn === true) {
                     p1Number.innerHTML = result;
@@ -222,7 +211,6 @@ function playFunction() {
                       p2Headline.classList.add("headline-border");
                       resultRound = [];
                       result = 0;
-                      console.log("resultRound", resultRound);
                       p1Number.innerHTML = 0;
                     }
                   } else {
